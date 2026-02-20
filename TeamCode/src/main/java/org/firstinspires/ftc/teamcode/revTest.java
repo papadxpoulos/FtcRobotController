@@ -7,9 +7,11 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 @TeleOp
 public class revTest extends OpMode {
+    @Override
     public void init() {
 
     }
+    @Override
     public void loop() {
 
     }
