@@ -2,10 +2,17 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
-import com.qualcomm.robotcore.hardware.
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class mechDistance {
     private DistanceSensor distance;
-    
-    public void
+
+    public void init(HardwareMap hwMap) {
+        distance = hwMap.get(DistanceSensor.class, "distance sensor 1");
+    }
+
+    public double getDistance () {
+        return distance.getDistance(DistanceUnit.CM);
+    }
+
 }
