@@ -20,7 +20,10 @@ public class revTest extends OpMode {
     @Override
     public void init() {
         dist.init(hardwareMap);
-        
+        frontLeft = hardwareMap.get(DcMotor.class,"B");
+        frontRight = hardwareMap.get(DcMotor.class,"F");
+        backLeft = hardwareMap.get(DcMotor.class,"A");
+        backRight = hardwareMap.get(DcMotor.class,"E");
     }
     @Override
     public void loop() {
