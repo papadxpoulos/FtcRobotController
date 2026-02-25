@@ -28,7 +28,31 @@ public class revTest extends OpMode {
     @Override
     public void loop() {
         telemetry.addData("distance", dist.getDistance());
-        
+        if (gamepad1.y) {
+            frontLeft.setPower(1);
+            frontRight.setPower(1);
+            backLeft.setPower(1);
+            backRight.setPower(1);
+        }
+        else {
+            frontLeft.setPower(0);
+            frontRight.setPower(0);
+            backLeft.setPower(0);
+            backRight.setPower(0);
+        }
+
+        if (gamepad1.x) {
+            frontLeft.setPower(-1);
+            frontRight.setPower(-1);
+            backLeft.setPower(-1);
+            backRight.setPower(-1);
+        }
+        else {
+            frontLeft.setPower(0);
+            frontRight.setPower(0);
+            backLeft.setPower(0);
+            backRight.setPower(0);
+        }
     }
 
 }
