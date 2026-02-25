@@ -28,6 +28,7 @@ public class revTest extends OpMode {
     @Override
     public void loop() {
         telemetry.addData("distance", dist.getDistance());
+        
     }
 
 }
