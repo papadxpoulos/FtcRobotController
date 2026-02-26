@@ -81,6 +81,30 @@ public class revTest extends OpMode {
             backLeft.setPower(0);
             backRight.setPower(0);
         }
+        if (gamepad1.left_stick_button) {
+            frontLeft.setPower(1);
+            frontRight.setPower(-1);
+            backLeft.setPower(-1);
+            backRight.setPower(1);
+        }
+        else {
+            frontLeft.setPower(0);
+            frontRight.setPower(0);
+            backLeft.setPower(0);
+            backRight.setPower(0);
+        }
+        if (gamepad1.right_stick_button) {
+            frontLeft.setPower(-1);
+            frontRight.setPower(1);
+            backLeft.setPower(1);
+            backRight.setPower(-1);
+        }
+        else {
+            frontLeft.setPower(0);
+            frontRight.setPower(0);
+            backLeft.setPower(0);
+            backRight.setPower(0);
+        }
     }
 
 }
