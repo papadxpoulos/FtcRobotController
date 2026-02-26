@@ -16,6 +16,8 @@ public class revTest extends OpMode {
     private DcMotor frontRight;
     private DcMotor backLeft;
     private DcMotor backRight;
+    private DcMotor shooter;
+    private DcMotor elevator;
 
     @Override
     public void init() {
@@ -24,6 +26,8 @@ public class revTest extends OpMode {
         frontRight = hardwareMap.get(DcMotor.class,"F");
         backLeft = hardwareMap.get(DcMotor.class,"A");
         backRight = hardwareMap.get(DcMotor.class,"E");
+        shooter = hardwareMap.get(DcMotor.class,"motor F");
+        elevator = hardwareMap.get(DcMotor.class,"motor B");
     }
     @Override
     public void loop() {
