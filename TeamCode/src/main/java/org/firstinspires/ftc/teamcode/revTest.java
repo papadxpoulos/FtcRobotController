@@ -105,6 +105,24 @@ public class revTest extends OpMode {
             backLeft.setPower(0);
             backRight.setPower(0);
         }
+        if (gamepad2.y) {
+            shooter.setPower(1);
+        }
+        else {
+            shooter.setPower(0);
+        }
+        if (gamepad2.right_bumper) {
+            elevator.setPower(1);
+        }
+        else {
+            elevator.setPower(0);
+        }
+        if (gamepad2.left_bumper) {
+            elevator.setPower(-1);
+        }
+        else {
+            elevator.setPower(0);
+        }
     }
 
 }
