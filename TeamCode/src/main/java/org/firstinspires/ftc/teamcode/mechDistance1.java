@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.DistanceSensor;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class mechDistance {
+public class mechDistance1 {
     private DistanceSensor distance;
 
     public void init(HardwareMap hwMap) {
