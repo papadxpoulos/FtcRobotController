@@ -8,6 +8,9 @@ public class mechServo {
 
     public void init(HardwareMap hwMap) {
         servoPos = hwMap.get(Servo.class,"port0exp");
-        
+    }
+
+    public void setServoPos(double angle) {
+        servoPos.setPosition(angle);
     }
 }
