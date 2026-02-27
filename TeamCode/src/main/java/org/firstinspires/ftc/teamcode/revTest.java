@@ -25,6 +25,7 @@ public class revTest extends OpMode {
     private DcMotor shooter;
     private DcMotor elevator;
     ElapsedTime timer = new ElapsedTime();
+    private double speed;
 
     @Override
     public void init() {
@@ -37,6 +38,7 @@ public class revTest extends OpMode {
         backRight = hardwareMap.get(DcMotor.class,"E");
         shooter = hardwareMap.get(DcMotor.class,"motor F");
         elevator = hardwareMap.get(DcMotor.class,"motor B");
+        speed = -gamepad1.right_trigger - gamepad1.left_trigger;
         timer.reset();
     }
     @Override
@@ -44,6 +46,12 @@ public class revTest extends OpMode {
         telemetry.addData("distance piso", dist1.getDistance());
         telemetry.addData("distance mprosta",dist2.getDistance());
         telemetry.update();
+
+        frontLeft.setPower(speed);
+        frontRight.setPower(speed);
+        backLeft.setPower(speed);
+        backRight.setPower(speed);
+
         if (gamepad1.triangle) {
             frontLeft.setPower(1);
             frontRight.setPower(1);
@@ -69,6 +77,7 @@ public class revTest extends OpMode {
             backLeft.setPower(0);
             backRight.setPower(0);
         }
+
         if (gamepad1.circle) {
             frontLeft.setPower(-1);
             frontRight.setPower(-1);
@@ -81,6 +90,7 @@ public class revTest extends OpMode {
             backLeft.setPower(0);
             backRight.setPower(0);
         }
+
         if (gamepad1.square) {
             frontLeft.setPower(1);
             frontRight.setPower(1);
@@ -93,6 +103,7 @@ public class revTest extends OpMode {
             backLeft.setPower(0);
             backRight.setPower(0);
         }
+
         if (gamepad1.left_stick_button) {
             frontLeft.setPower(1);
             frontRight.setPower(-1);
@@ -105,6 +116,7 @@ public class revTest extends OpMode {
             backLeft.setPower(0);
             backRight.setPower(0);
         }
+
         if (gamepad1.right_stick_button) {
             frontLeft.setPower(-1);
             frontRight.setPower(1);
@@ -117,30 +129,35 @@ public class revTest extends OpMode {
             backLeft.setPower(0);
             backRight.setPower(0);
         }
+
         if (gamepad2.y) {
             shooter.setPower(1);
         }
         else {
             shooter.setPower(0);
         }
+
         if (gamepad2.right_bumper) {
             elevator.setPower(1);
         }
         else {
             elevator.setPower(0);
         }
+
         if (gamepad2.left_bumper) {
             elevator.setPower(-1);
         }
         else {
             elevator.setPower(0);
         }
+
         if (gamepad2.dpad_up) {
             servoPos.setServoPos(-1);
         }
         else {
             servoPos.setServoPos(0.35);
         }
+        
         if (gamepad2.cross) {
             timer.reset();
             while (timer.time() < 1.3) {
