@@ -37,6 +37,7 @@ public class revTest extends OpMode {
     public void loop() {
         telemetry.addData("distance piso", dist1.getDistance());
         telemetry.addData("distance mprosta",dist2.getDistance());
+        telemetry.update();
         if (gamepad1.y) {
             frontLeft.setPower(1);
             frontRight.setPower(1);
