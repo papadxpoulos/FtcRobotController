@@ -141,6 +141,15 @@ public class revTest extends OpMode {
         else {
             servoPos.setServoPos(0.35);
         }
+        if (gamepad2.cross) {
+            timer.reset();
+            while (timer.seconds() < 1.3) {
+                shooter.setPower(1);
+            }
+        }
+        else {
+            shooter.setPower(0);
+        }
     }
 
 }
