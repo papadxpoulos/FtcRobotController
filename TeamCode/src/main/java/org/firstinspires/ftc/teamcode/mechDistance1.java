@@ -5,14 +5,14 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class mechDistance1 {
-    private DistanceSensor distance;
+    private DistanceSensor distance1;
 
     public void init(HardwareMap hwMap) {
-        distance = hwMap.get(DistanceSensor.class, "distance sensor 1");
+        distance1 = hwMap.get(DistanceSensor.class, "distance sensor 1");
     }
 
     public double getDistance () {
-        return distance.getDistance(DistanceUnit.CM);
+        return distance1.getDistance(DistanceUnit.CM);
     }
 
 }
