@@ -132,6 +132,12 @@ public class revTest extends OpMode {
         else {
             elevator.setPower(0);
         }
+        if (gamepad2.dpad_up) {
+            servoPos.setServoPos(-1);
+        }
+        else {
+            servoPos.setServoPos(0.35);
+        }
     }
 
 }
