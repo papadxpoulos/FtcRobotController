@@ -10,6 +10,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp
 public class revTest extends OpMode {
@@ -23,6 +24,7 @@ public class revTest extends OpMode {
     private DcMotor backRight;
     private DcMotor shooter;
     private DcMotor elevator;
+    ElapsedTime timer = new ElapsedTime();
 
     @Override
     public void init() {
@@ -35,6 +37,7 @@ public class revTest extends OpMode {
         backRight = hardwareMap.get(DcMotor.class,"E");
         shooter = hardwareMap.get(DcMotor.class,"motor F");
         elevator = hardwareMap.get(DcMotor.class,"motor B");
+        timer.reset();
     }
     @Override
     public void loop() {
