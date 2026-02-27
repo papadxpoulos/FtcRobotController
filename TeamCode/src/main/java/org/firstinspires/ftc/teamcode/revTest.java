@@ -44,7 +44,7 @@ public class revTest extends OpMode {
         telemetry.addData("distance piso", dist1.getDistance());
         telemetry.addData("distance mprosta",dist2.getDistance());
         telemetry.update();
-        if (gamepad1.y) {
+        if (gamepad1.triangle) {
             frontLeft.setPower(1);
             frontRight.setPower(1);
             backLeft.setPower(1);
@@ -57,7 +57,7 @@ public class revTest extends OpMode {
             backRight.setPower(0);
         }
 
-        if (gamepad1.x) {
+        if (gamepad1.cross) {
             frontLeft.setPower(-1);
             frontRight.setPower(-1);
             backLeft.setPower(-1);
