@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import org.firstinspires.ftc.teamcode.mechDistance1;
 import org.firstinspires.ftc.teamcode.mechDistance2;
+import org.firstinspires.ftc.teamcode.mechServo;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
@@ -15,6 +16,7 @@ public class revTest extends OpMode {
 
     mechDistance1 dist1 = new mechDistance1();
     mechDistance2 dist2 = new mechDistance2();
+    mechServo servoPos = new mechServo();
     private DcMotor frontLeft;
     private DcMotor frontRight;
     private DcMotor backLeft;
@@ -26,6 +28,7 @@ public class revTest extends OpMode {
     public void init() {
         dist1.init(hardwareMap);
         dist2.init(hardwareMap);
+        servoPos.init(hardwareMap);
         frontLeft = hardwareMap.get(DcMotor.class,"B");
         frontRight = hardwareMap.get(DcMotor.class,"F");
         backLeft = hardwareMap.get(DcMotor.class,"A");
