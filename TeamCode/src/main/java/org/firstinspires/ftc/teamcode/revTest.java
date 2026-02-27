@@ -143,7 +143,7 @@ public class revTest extends OpMode {
         }
         if (gamepad2.cross) {
             timer.reset();
-            while (timer.seconds() < 1.3) {
+            while (timer.time() < 1.3) {
                 shooter.setPower(1);
             }
         }
