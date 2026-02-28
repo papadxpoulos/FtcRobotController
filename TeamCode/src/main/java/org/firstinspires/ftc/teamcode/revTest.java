@@ -43,8 +43,8 @@ public class revTest extends OpMode {
     }
     @Override
     public void loop() {
-        telemetry.addData("distance piso", dist1.getDistance());
-        telemetry.addData("distance mprosta",dist2.getDistance());
+        telemetry.addData("distance piso", dist1.getDistance(DistanceUnit.CM));
+        telemetry.addData("distance mprosta",dist2.getDistance(DistanceUnit.CM));
         telemetry.update();
 
         frontLeft.setPower(speed);
@@ -160,7 +160,7 @@ public class revTest extends OpMode {
         
         if (gamepad2.cross) {
             timer.reset();
-            while (timer.time() < 1.3) {
+            while (!(timer.time() > 1.3)) {
                 shooter.setPower(1);
             }
         }
